@@ -20,9 +20,9 @@ class Sprite:
                 self.matrix.append(Pixel(x, y, r, g, b, a, char))
 
     def transpose(self, X, Y, f):
+        ### Still working out the bugs on this ###
         new_matrix = []
 
-###
         if X > 0:
             i = 0
             w = self.width
@@ -69,119 +69,3 @@ class Sprite:
                     new_matrix.append(self.matrix[j * self.width + i])
 
         return new_matrix
-###
-'''
-        if self.flipped == True and self.flip_x == False and self.flip_y == False:
-            i = 0
-            j = 0
-            for y in range(self.height):
-                for x in range(self.width):
-                    self.matrix[j * self.width + i].position.x = x
-                    self.matrix[j * self.width + i].position.y = y
-                    new_matrix.append(self.matrix[j * self.width + i])
-                    i += 1
-                    if i >= self.width:
-                        i = 0
-                j += 1
-                if j >= self.height:
-                    j = 0
-        if self.flipped == True and self.flip_x == True and self.flip_y == False:
-            i = self.width-1
-            j = 0
-            for y in range(self.height):
-                for x in range(self.width):
-                    self.matrix[j * self.width + i].position.x = x
-                    self.matrix[j * self.width + i].position.y = y
-                    new_matrix.append(self.matrix[j * self.width + i])
-                    i -= 1
-                    if i < 0:
-                        i = self.width-1
-                j += 1
-                if j >= self.height:
-                    j = 0
-        if self.flipped == True and self.flip_x == False and self.flip_y == True:
-            i = 0
-            j = self.height-1
-            for y in range(self.height):
-                for x in range(self.width):
-                    self.matrix[j * self.width + i].position.x = x
-                    self.matrix[j * self.width + i].position.y = y
-                    new_matrix.append(self.matrix[j * self.width + i])
-                    i += 1
-                    if i >= self.width:
-                        i = 0
-                j -= 1
-                if j < 0:
-                    j = self.height-1
-        if self.flipped == True and self.flip_x == True and self.flip_y == True:
-            i = self.width-1
-            j = self.height-1
-            for y in range(self.height):
-                for x in range(self.width):
-                    self.matrix[j * self.width + i].position.x = x
-                    self.matrix[j * self.width + i].position.y = y
-                    new_matrix.append(self.matrix[j * self.width + i])
-                    i -= 1
-                    if i < 0:
-                        i = self.width-1
-                j -= 1
-                if j < 0:
-                    j = self.height-1
-
-        if self.flipped == False and self.flip_x == False and self.flip_y == False:
-            i = 0
-            j = 0
-            for x in range(self.height):
-                for y in range(self.width):
-                    self.matrix[j * self.width + i].position.x = x
-                    self.matrix[j * self.width + i].position.y = y
-                    new_matrix.append(self.matrix[j * self.width + i])
-                    i += 1
-                    if i >= self.width:
-                        i = 0
-                j += 1
-                if j >= self.height:
-                    j = 0
-        if self.flipped == False and self.flip_x == True and self.flip_y == False:
-            i = self.width-1
-            j = 0
-            for x in range(self.height):
-                for y in range(self.width):
-                    self.matrix[j * self.width + i].position.x = x
-                    self.matrix[j * self.width + i].position.y = y
-                    new_matrix.append(self.matrix[j * self.width + i])
-                    i -= 1
-                    if i < 0:
-                        i = self.width-1
-                j += 1
-                if j >= self.height:
-                    j = 0
-        if self.flipped == False and self.flip_x == False and self.flip_y == True:
-            i = 0
-            j = self.height-1
-            for x in range(self.height):
-                for y in range(self.width):
-                    self.matrix[j * self.width + i].position.x = x
-                    self.matrix[j * self.width + i].position.y = y
-                    new_matrix.append(self.matrix[j * self.width + i])
-                    i += 1
-                    if i >= self.width:
-                        i = 0
-                j -= 1
-                if j < 0:
-                    j = self.height-1
-        if self.flipped == False and self.flip_x == True and self.flip_y == True:
-            i = self.width-1
-            j = self.height-1
-            for x in range(self.height):
-                for y in range(self.width):
-                    self.matrix[j * self.width + i].position.x = x
-                    self.matrix[j * self.width + i].position.y = y
-                    new_matrix.append(self.matrix[j * self.width + i])
-                    i -= 1
-                    if i < 0:
-                        i = self.width-1
-                j -= 1
-                if j < 0:
-                    j = self.height-1
-'''
